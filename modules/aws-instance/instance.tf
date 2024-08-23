@@ -17,6 +17,7 @@ resource "aws_instance" "server" {
   vpc_security_group_ids = [var.vpc_security_group]
   lifecycle {
     create_before_destroy = true
+    ignore_changes        = [tags]
   }
   tags = merge(var.tags, { Name = "${var.global_name}" })
   volume_tags = merge(var.tags, { Name = "${var.global_name}_ebs" })
