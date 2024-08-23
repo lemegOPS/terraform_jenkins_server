@@ -63,11 +63,11 @@ variable "sg_port" {
 #----------- Route53 variables -----------#
 
 variable "route53_zone" {
-  default     = "lemegops.com"
+  default     = "example.com"
   description = "Add you domain in AWS"
 }
 
 variable "subdomain" {
-  default     = "jen"
+  default     = "jenkins"
   description = "Add sundomain to create in AWS"
 }
