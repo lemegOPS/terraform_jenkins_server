@@ -19,7 +19,7 @@ resource "aws_instance" "server" {
     create_before_destroy = true
   }
   tags = merge(var.tags, { Name = "${var.global_name}" })
-  volume_tags = merge(var.tags, { Name = "${var.global_name}" })
+  volume_tags = merge(var.tags, { Name = "${var.global_name}_ebs" })
 }
 
 
