@@ -80,6 +80,6 @@ variable "subdomain" {
 #----------- Nginx variables -----------#
 
 variable "certbot_email" {
-  default     = "lemegops@gmail.com"
+  default     = "YOUR_MAIL@gmail.com"
   description = "Email for certbot"
 }
