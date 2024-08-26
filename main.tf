@@ -12,6 +12,9 @@ module "aws-instance" {
   vpc_security_group = module.aws-security-group.security_group_id
   global_name        = local.global_name
   private_key_name   = module.aws-private-key.private_key_name
+  route53_zone       = var.route53_zone
+  subdomain          = var.subdomain
+  certbot_email      = var.certbot_email
 }
 
 
@@ -34,7 +37,8 @@ module "aws-s3" {
 module "aws-security-group" {
   source       = "./modules/aws-sg"
   vpc_id       = module.aws-vpc.vpc_id
-  sg_port      = var.sg_port
+  sg_port_web  = var.sg_port_web
+  sg_port_sec  = var.sg_port_sec
   cidr_block   = var.cidr_block
   propper_tags = local.propper_tags
   global_name  = local.global_name

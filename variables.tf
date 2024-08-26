@@ -54,11 +54,15 @@ variable "cidr_block" {
   description = "Cidr Block map. Use for network"
 }
 
-variable "sg_port" {
-  default     = ["22", "80", "8080", "443"]
+variable "sg_port_web" {
+  default     = ["443", "80"]
   description = "Ports for Security group. Also map for diferent env."
 }
 
+variable "sg_port_sec" {
+  default     = ["22", "8080"]
+  description = "Ports for Security group. Also map for diferent env."
+}
 
 #----------- Route53 variables -----------#
 
@@ -70,4 +74,12 @@ variable "route53_zone" {
 variable "subdomain" {
   default     = "jenkins"
   description = "Add sundomain to create in AWS"
+}
+
+
+#----------- Nginx variables -----------#
+
+variable "certbot_email" {
+  default     = "lemegops@gmail.com"
+  description = "Email for certbot"
 }
