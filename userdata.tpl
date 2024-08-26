@@ -24,9 +24,7 @@ sudo yum upgrade
 sudo yum install java-17-amazon-corretto -y
 sudo yum install jenkins -y
 
-## sudo sed -i 's/8080/80/g' /usr/lib/systemd/system/jenkins.service
 sudo sed -i 's/#httpListenAddress=127.0.0.1/httpListenAddress=127.0.0.1/g' /usr/lib/systemd/system/jenkins.service
-## sudo sed -i 's/#AmbientCapabilities=CAP_NET_BIND_SERVICE/AmbientCapabilities=CAP_NET_BIND_SERVICE/g' /usr/lib/systemd/system/jenkins.service
 sudo systemctl daemon-reload
 
 sudo systemctl enable jenkins
